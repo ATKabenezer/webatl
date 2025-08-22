@@ -1,55 +1,24 @@
-"use client";
-import { motion } from "framer-motion";
-import Link from "next/link";
-
-export default function HomePage() {
+export default function AboutPage() {
   return (
-    <section className="hero-bg">
-      <div className="container py-20 md:py-28">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900"
-        >
-          Secure. Reliable. <span className="text-sky-600">ATL Technology</span>.
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1, duration: 0.6 }}
-          className="mt-6 max-w-2xl text-lg md:text-xl text-slate-600"
-        >
-          We help organizations in Ethiopia design, implement, and operate enterprise-grade{" "}
-          cybersecurity, networking, and data center solutions.
-        </motion.p>
-        <div className="mt-10 flex gap-4">
-          <Link href="/services" className="px-5 py-3 bg-sky-600 text-white rounded-xl shadow">
-            Explore Services
-          </Link>
-          <Link href="/contact" className="px-5 py-3 border rounded-xl shadow">
-            Talk to an Expert
-          </Link>
+    <section className="container py-16">
+      <h1 className="text-3xl md:text-4xl font-bold">About ATL Technology</h1>
+      <p className="mt-4 max-w-3xl text-slate-700">
+        ATL Technology is a trusted Ethiopian IT solutions provider specializing in cybersecurity,
+        enterprise networking, and data center infrastructure.
+      </p>
+      <div className="mt-10 grid md:grid-cols-2 gap-8">
+        <div className="p-6 rounded-2xl border bg-white shadow-sm">
+          <h2 className="text-2xl font-semibold">Vision</h2>
+          <p className="mt-2 text-slate-700">
+            To be the most trusted cybersecurity and enterprise technology partner in Africa.
+          </p>
         </div>
-      </div>
-      <div className="container pb-16 grid md:grid-cols-3 gap-6">
-        {[
-          { title: "Cyber Security Consultation", desc: "Assessments, policies, awareness, and roadmap." },
-          { title: "Cybersecurity Solutions", desc: "SIEM, EDR, PAM, DLP, SOC enablement." },
-          { title: "Enterprise Network & Security", desc: "Firewalls, VPN, SD-WAN, segmentation." },
-        ].map((c, i) => (
-          <motion.div
-            key={c.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 * i }}
-            className="p-6 rounded-2xl border bg-white shadow-sm"
-          >
-            <h3 className="font-semibold text-lg">{c.title}</h3>
-            <p className="mt-2 text-slate-600">{c.desc}</p>
-          </motion.div>
-        ))}
+        <div className="p-6 rounded-2xl border bg-white shadow-sm">
+          <h2 className="text-2xl font-semibold">Mission</h2>
+          <p className="mt-2 text-slate-700">
+            To empower organizations with secure, innovative, and reliable technology solutions.
+          </p>
+        </div>
       </div>
     </section>
   );
